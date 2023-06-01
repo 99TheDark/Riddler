@@ -24,7 +24,7 @@ function playAll(chances::Vector{Float64}, count::Int64)::Float64
     total = 2^count - 1
     for i in 0:total
         binary = chop(head=(64 - count), tail=0, bitstring(i))
-        vals = [parse(Int64, x) for x in binary]
+        vals = [parse(Int64, v) for v in binary]
         game = playGame(chances, Vector{UInt8}(vals))
         if game >= 0
             winChance += game

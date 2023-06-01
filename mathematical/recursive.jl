@@ -50,4 +50,4 @@ function compareSeries()::Float64
     return abs(playAll(cur) - playAll(pre))
 end
 
-println(compareSeries())
+@time println(compareSeries())
